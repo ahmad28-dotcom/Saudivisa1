@@ -3,287 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معتمدون لإنجاز معاملات السفارة السعودية في الأردن</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>معتمدون لإنجاز معاملات السفارة السعودية في الاردن</title>
     <style>
+        :root {
+            --primary-color: #0F172A; /* كحلي داكن فاخر */
+            --accent-color: #0284C7;  /* أزرق سماوي حيوي */
+            --bg-color: #F8FAFC;      /* خلفية فاتحة نظيفة */
+            --text-color: #334155;    /* لون النص المريح للعين */
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            font-family: 'Tajawal', sans-serif;
-            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        .hero-bg {
-            background: linear-gradient(rgba(0, 100, 0, 0.8), rgba(0, 50, 0, 0.8)), url('https://images.unsplash.com/photo-1582230332396-4e1d51fc0429?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+
+        /* شريط التنقل العلوي */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: #16a34a;
-            margin: 10px auto 0;
-            border-radius: 2px;
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* الواجهة الرئيسية (Hero) */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #1E293B);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #94A3B8;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #0369A1;
+            transform: translateY(-2px);
+        }
+
+        /* أقسام الموقع */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* تذييل الصفحة (Footer / تواصل معنا) */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-content h4 {
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .footer-content p, .footer-content li {
+            list-style: none;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #CBD5E1;
+        }
+
+        .copy {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #94A3B8;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-reverse space-x-2">
-                <i class="fas fa-passport text-green-600 text-3xl"></i>
-                <span class="text-xl font-bold text-green-800">المكتب المعتمد</span>
-            </div>
-            
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-reverse space-x-6 font-medium">
-                <a href="#home" class="hover:text-green-600 transition">الرئيسية</a>
-                <a href="#about" class="hover:text-green-600 transition">من نحن</a>
-                <a href="#services" class="hover:text-green-600 transition">الخدمات والتأشيرات</a>
-                <a href="#appointments" class="hover:text-green-600 transition">حجز مواعيد تسهيل</a>
-                <a href="#accreditation" class="hover:text-green-600 transition">الاعتماد المهني</a>
-                <a href="#contact" class="hover:text-green-600 transition">تواصل معنا</a>
-            </div>
+    <!-- شريط التنقل -->
+    <header>
+        <div class="logo">معتمدون لإنجاز معاملات السفارة السعودية</div>
+        <nav>
+            <ul>
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">الخدمات والتأشيرات</a></li>
+                <li><a href="#tajeel">حجز مواعيد تسهيل</a></li>
+                <li><a href="#accreditation">الاعتماد المهني</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <!-- Mobile Menu Toggle -->
-            <button class="md:hidden text-gray-600 focus:outline-none" onclick="toggleMenu()">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-2 space-y-2 pb-4">
-            <a href="#home" class="block py-2 hover:text-green-600">الرئيسية</a>
-            <a href="#about" class="block py-2 hover:text-green-600">من نحن</a>
-            <a href="#services" class="block py-2 hover:text-green-600">الخدمات والتأشيرات</a>
-            <a href="#appointments" class="block py-2 hover:text-green-600">حجز مواعيد تسهيل</a>
-            <a href="#accreditation" class="block py-2 hover:text-green-600">الاعتماد المهني</a>
-            <a href="#contact" class="block py-2 hover:text-green-600">تواصل معنا</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg text-white py-24 md:py-32 px-4 text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">بوابتكم الموثوقة والمجربة لإنجاز كافة التأشيرات والخدمات الرسمية</h1>
-            <p class="text-lg md:text-xl mb-10 text-gray-100">نحن مكتب معتمد في متابعة وإنجاز إجراءات تأشيرات العمل السعودية في الأردن، نلتزم بالشفافية والسرعة والدقة لضمان إنهاء معاملاتكم بكل أمان.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:0785073000" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-bold transition flex items-center justify-center">
-                    <i class="fas fa-phone-alt ml-2"></i> اتصل بنا الآن
-                </a>
-                <a href="https://wa.me/962785073000" target="_blank" class="bg-white text-green-700 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition flex items-center justify-center border-2 border-white">
-                    <i class="fab fa-whatsapp ml-2 text-xl"></i> ابدأ طلبك عبر الواتساب
-                </a>
-            </div>
-        </div>
+    <!-- الواجهة الرئيسية -->
+    <section id="hero" class="hero">
+        <h1>معتمدون لإنجاز معاملات السفارة السعودية في الاردن</h1>
+        <p>بوابتكم الموثوقة والمجربة لإنجاز كافة التأشيرات والخدمات الرسمية للمملكة العربية السعودية بكل سرعة وسهولة ودقة تامة.</p>
+        <a href="https://wa.me/962785073000" class="btn">💬 ابدأ طلبك الآن عبر الواتساب</a>
     </section>
 
-    <!-- About Us -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">من نحن</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-lg leading-relaxed mb-6 text-gray-700">
-                        نحن مكتب معتمد ومرخص في الأردن، متخصص في تقديم خدمات الاستشارة ومتابعة وإنجاز معاملات السفارة السعودية والتأشيرات بكافة أنواعها. رسالتنا هي تسهيل الإجراءات الرسمية لعملائنا الكرام من خلال الالتزام التام بالشفافية، السرعة، والدقة العالية في إنجاز المعاملات حتى اكتمالها.
-                    </p>
-                    <div class="bg-green-50 border-r-4 border-green-600 p-6 rounded-l-lg">
-                        <h3 class="text-xl font-bold text-green-800 mb-3">لماذا تختارنا؟</h3>
-                        <p class="text-gray-700">لأننا مكتب معتمد وموثوق في عمان، نملك خبرة واسعة في متطلبات وإجراءات السفارة السعودية، مع متابعة مستمرة للطلبات وحرص على إنهائها في أسرع وقت، ووجود فريق عمل مختص للإجابة عن استفساراتكم ودعمكم طوال فترة المعاملة.</p>
-                    </div>
+    <!-- المحتوى والأقسام -->
+    <div class="container">
+        
+        <!-- من نحن -->
+        <section id="about" style="margin-bottom: 50px;">
+            <h2 class="section-title">من نحن</h2>
+            <div class="card" style="border-top-color: var(--primary-color);">
+                <p>نحن مكتب معتمد ومرخص في الأردن، متخصص في تقديم خدمات الاستشارة ومتابعة وإنجاز معاملات السفارة السعودية والتأشيرات بكافة أنواعها. رسالتنا هي تسهيل الإجراءات الرسمية لعملائنا الكرام من خلال الالتزام التام بالشفافية، السرعة، والدقة العالية في إنجاز المعاملات حتى اكتمالها.</p>
+            </div>
+        </section>
+
+        <!-- الخدمات -->
+        <section id="services" style="margin-bottom: 50px;">
+            <h2 class="section-title">الخدمات والتأشيرات</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>تأشيرات العمل السعودية</h3>
+                    <p>متابعة وإنجاز إجراءات تأشيرات العمل بالكامل من الأردن مع تقديم خدمات الاستشارة المهنية والمتطلبات اللازمة.</p>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-gray-100 p-8 rounded-lg text-center">
-                        <i class="fas fa-check-circle text-4xl text-green-600 mb-4"></i>
-                        <h4 class="font-bold">مكتب معتمد</h4>
-                    </div>
-                    <div class="bg-gray-100 p-8 rounded-lg text-center">
-                        <i class="fas fa-bolt text-4xl text-green-600 mb-4"></i>
-                        <h4 class="font-bold">سرعة الإنجاز</h4>
-                    </div>
-                    <div class="bg-gray-100 p-8 rounded-lg text-center">
-                        <i class="fas fa-shield-alt text-4xl text-green-600 mb-4"></i>
-                        <h4 class="font-bold">شفافية تامة</h4>
-                    </div>
-                    <div class="bg-gray-100 p-8 rounded-lg text-center">
-                        <i class="fas fa-user-tie text-4xl text-green-600 mb-4"></i>
-                        <h4 class="font-bold">فريق مختص</h4>
-                    </div>
+                <div class="card">
+                    <h3>الخدمات المتممة</h3>
+                    <p>تصديق الشهادات والأوراق الرسمية المطلوبة ومتابعة الطلبات خطوة بخطوة حتى اكتمال كافة الإجراءات الرسمية.</p>
                 </div>
+                <div class="card">
+                    <h3>التأشيرات والزيارات الأخرى</h3>
+                    <p>تشمل التأشيرة السياحية، تأشيرات الزيارة (العائلية والشخصية)، وتأشيرات رجال الأعمال.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- تسهيل والاعتماد المهني -->
+        <div class="grid" style="margin-bottom: 50px;">
+            <section id="tajeel">
+                <h2 class="section-title" style="font-size: 1.5rem;">حجز مواعيد تسهيل</h2>
+                <div class="card">
+                    <p>نقدم خدمة مساعدة العملاء في ترتيب وحجز المواعيد الرسمية الخاصة بمركز "تسهيل" المعتمد لإنجاز معاملات التأشيرات والخدمات القنصلية بكل سهولة.</p>
+                </div>
+            </section>
+
+            <section id="accreditation">
+                <h2 class="section-title" style="font-size: 1.5rem;">الاعتماد المهني</h2>
+                <div class="card">
+                    <p>تقديم الاستشارات والإجراءات الخاصة باعتماد الشهادات المهنية، توثيق المؤهلات، ومتابعة متطلبات الاعتماد للسفر والعمل في السعودية.</p>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <!-- تواصل معنا (Footer) -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <h4>معلومات الاتصال</h4>
+                <p>📞 هاتف / واتساب: 0785073000</p>
+                <p>📧 البريد الإلكتروني: Soudevisa@gmail.com</p>
+            </div>
+            <div>
+                <h4>عنوان المكتب</h4>
+                <p>الأردن - عمان - الدوار الأول</p>
+            </div>
+            <div>
+                <h4>ساعات العمل</h4>
+                <p>من الأحد إلى الخميس</p>
+                <p>من الساعة 9:00 صباحاً حتى 3:00 مساءً</p>
             </div>
         </div>
-    </section>
-
-    <!-- Services & Visas -->
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">الخدمات والتأشيرات</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 text-2xl">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">تأشيرات العمل السعودية</h3>
-                    <p class="text-gray-600">متابعة وإنجاز إجراءات تأشيرات العمل بالكامل من الأردن مع تقديم خدمات الاستشارة المهنية والمتطلبات اللازمة.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 text-2xl">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">الخدمات المتممة</h3>
-                    <p class="text-gray-600">تصديق الشهادات والأوراق الرسمية المطلوبة ومتابعة الطلبات خطوة بخطوة حتى اكتمال كافة الإجراءات الرسمية.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 text-2xl">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">الخدمات السعودية الأخرى</h3>
-                    <p class="text-gray-600">تشمل التأشيرة السياحية، تأشيرات الزيارة (العائلية والشخصية)، وتأشيرات رجال الأعمال.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Appointments & Accreditation -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Appointments -->
-                <div id="appointments" class="bg-green-700 text-white p-10 rounded-2xl shadow-lg relative overflow-hidden">
-                    <i class="fas fa-calendar-check absolute -bottom-10 -left-10 text-9xl opacity-10"></i>
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-calendar-alt ml-3"></i> حجز مواعيد تسهيل
-                    </h2>
-                    <p class="text-lg mb-8 opacity-90">نقدم خدمة مساعدة العملاء في ترتيب وحجز المواعيد الرسمية الخاصة بمركز "تسهيل" المعتمد لإنجاز معاملات التأشيرات والخدمات القنصلية بكل سهولة ودون عناء.</p>
-                    <a href="#contact" class="inline-block bg-white text-green-700 px-6 py-2 rounded-lg font-bold hover:bg-gray-100 transition">احجز موعدك الآن</a>
-                </div>
-                <!-- Accreditation -->
-                <div id="accreditation" class="bg-gray-800 text-white p-10 rounded-2xl shadow-lg relative overflow-hidden">
-                    <i class="fas fa-certificate absolute -bottom-10 -left-10 text-9xl opacity-10"></i>
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-graduation-cap ml-3"></i> الاعتماد المهني
-                    </h2>
-                    <p class="text-lg mb-8 opacity-90">نقدم خدمات متكاملة تتضمن تقديم الاستشارات والإجراءات الخاصة باعتماد الشهادات المهنية، توثيق المؤهلات العلمية والعملية، ومتابعة متطلبات الاعتماد.</p>
-                    <a href="#contact" class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-green-700 transition">اطلب استشارة</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Us -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">لماذا تختار مكتبنا؟</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="text-center p-6">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-id-badge"></i></div>
-                    <h4 class="font-bold mb-2">مكتب معتمد</h4>
-                    <p class="text-sm text-gray-600">متخصصون في متابعة وإنجاز معاملات السفارة السعودية.</p>
-                </div>
-                <div class="text-center p-6">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-tachometer-alt"></i></div>
-                    <h4 class="font-bold mb-2">دقة وسرعة الإنجاز</h4>
-                    <p class="text-sm text-gray-600">متابعة مستمرة للطلبات والحرص على إنهائها في أسرع وقت.</p>
-                </div>
-                <div class="text-center p-6">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-handshake"></i></div>
-                    <h4 class="font-bold mb-2">التزام تام</h4>
-                    <p class="text-sm text-gray-600">نعمل وفق معايير عالية من الشفافية والاحترافية.</p>
-                </div>
-                <div class="text-center p-6">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-headset"></i></div>
-                    <h4 class="font-bold mb-2">استشارات ودعم</h4>
-                    <p class="text-sm text-gray-600">فريق مختص لإرشادك والإجابة عن كافة استفساراتك.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">تواصل معنا</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="flex items-start">
-                        <div class="bg-green-100 p-4 rounded-lg text-green-600 ml-4">
-                            <i class="fas fa-phone-alt text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">رقم الاتصال / واتساب</h4>
-                            <p class="text-gray-600 text-xl font-medium" dir="ltr">0785073000</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-green-100 p-4 rounded-lg text-green-600 ml-4">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">البريد الإلكتروني</h4>
-                            <p class="text-gray-600">Soudevisa@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-green-100 p-4 rounded-lg text-green-600 ml-4">
-                            <i class="fas fa-map-marker-alt text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">عنوان المكتب</h4>
-                            <p class="text-gray-600">الأردن - عمان - الدوار الأول</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-green-100 p-4 rounded-lg text-green-600 ml-4">
-                            <i class="fas fa-clock text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">ساعات العمل</h4>
-                            <p class="text-gray-600">من الأحد إلى الخميس (9:00 ص - 3:00 م)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-                    <h4 class="text-xl font-bold mb-6">أرسل لنا استفسارك</h4>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="الاسم الكامل" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none">
-                        <input type="tel" placeholder="رقم الهاتف" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none">
-                        <textarea placeholder="كيف يمكننا مساعدتك؟" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 focus:outline-none"></textarea>
-                        <button type="submit" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition">إرسال الطلب</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex items-center justify-center space-x-reverse space-x-2 mb-6">
-                <i class="fas fa-passport text-green-500 text-3xl"></i>
-                <span class="text-2xl font-bold">المكتب المعتمد</span>
-            </div>
-            <p class="text-gray-400 mb-8 max-w-md mx-auto">شريككم الموثوق لإنجاز كافة المعاملات القنصلية والتأشيرات للمملكة العربية السعودية في الأردن.</p>
-            <div class="flex justify-center space-x-reverse space-x-6 mb-8">
-                <a href="https://wa.me/962785073000" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-whatsapp"></i></a>
-                <a href="tel:0785073000" class="text-gray-400 hover:text-white transition text-2xl"><i class="fas fa-phone"></i></a>
-                <a href="mailto:Soudevisa@gmail.com" class="text-gray-400 hover:text-white transition text-2xl"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="border-t border-gray-800 pt-8">
-                <p class="text-sm text-gray-500">© 2024 كافة الحقوق محفوظة للمكتب المعتمد لإنجاز معاملات السفارة السعودية.</p>
-            </div>
+        <div class="copy">
+            جميع الحقوق محفوظة © معتمدون لإنجاز معاملات السفارة السعودية في الاردن
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html>
