@@ -2,257 +2,193 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>معتمدون لإنجاز معاملات السفارة السعودية في الاردن</title>
     <style>
-        :root {
-            --primary-color: #0F172A;
-            --accent-color: #0284C7;
-            --bg-color: #F8FAFC;
-            --text-color: #334155;
-            --white: #FFFFFF;
-        }
-
-        * {
+        /* أنماط CSS لتطبيق الألوان وتنسيق النص */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            color: #333;
             line-height: 1.6;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 5%;
+        /* الترويسة */
+        .site-header {
+            background-color: #002f6c; /* أزرق داكن */
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        /* الشريط المتحرك (Marquee) */
+        .ticker-wrap {
+            background-color: #f0f0f0; /* رمادي فاتح */
+            color: #0056b3;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 1px solid #ddd;
+            padding: 5px 0;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .ticker {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translate(100%, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        /* القائمة الرئيسية (Menu) */
+        .main-menu {
+            background-color: #0056b3; /* أزرق متوسط */
+            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            color: white;
         }
 
-        .logo {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--white);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: var(--white);
+        .menu-links a {
+            color: #fff;
             text-decoration: none;
-            font-size: 0.95rem;
+            margin: 0 15px;
+            font-weight: bold;
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
-            color: var(--accent-color);
+        .menu-links a:hover {
+            color: #cce5ff;
+        }
+        
+        .logo-area img {
+            height: 40px; /* مثال لحجم الشعار */
         }
 
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), #1E293B);
-            color: var(--white);
-            text-align: center;
-            padding: 80px 20px;
+        /* القسم الرئيسي (من نحن) */
+        .about-section {
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            background: #ffffff;
         }
 
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--white);
+        .about-text {
+            flex: 1;
+            padding-left: 30px;
         }
 
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            color: #94A3B8;
-        }
-
-        .btn {
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
+        .about-text h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
             display: inline-block;
-            transition: background 0.3s, transform 0.2s;
+            padding-bottom: 5px;
         }
 
-        .btn:hover {
-            background-color: #0369A1;
-            transform: translateY(-2px);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
+        .about-image {
+            flex: 1;
             text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: var(--primary-color);
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        /* قسم التذييل (الاتصال) */
+        .footer-section {
+            background-color: #002f6c; /* أزرق داكن */
+            color: #fff;
+            padding: 40px 50px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info div {
+            margin-bottom: 10px;
+        }
+        
+        .contact-label {
+            font-weight: bold;
+            color: #80bdff;
+        }
+        
+        .embassy-img {
+            max-width: 200px;
+            border-radius: 50%; /* مثال لشكل الصورة */
         }
 
-        .card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--accent-color);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 40px 20px;
-            margin-top: 60px;
-        }
-
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .footer-content h4 {
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        .footer-content p, .footer-content li {
-            list-style: none;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #CBD5E1;
-        }
-
-        .copy {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.85rem;
-            color: #94A3B8;
-        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">معتمدون لإنجاز معاملات السفارة السعودية</div>
-        <nav>
-            <ul>
-                <li><a href="#hero">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#services">الخدمات والتأشيرات</a></li>
-                <li><a href="#tajeel">حجز مواعيد تسهيل</a></li>
-                <li><a href="#accreditation">الاعتماد المهني</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-        </nav>
+    <!-- 1. الترويسة مع الشريط المتحرك -->
+    <header class="site-header">
+        <div class="ticker-wrap">
+            <div class="ticker">
+                ◄◄ &nbsp;&nbsp; معتمدون لإنجاز معاملات السفارة السعودية في الاردن &nbsp;&nbsp; ◄◄
+            </div>
+        </div>
     </header>
 
-    <section id="hero" class="hero">
-        <h1>معتمدون لإنجاز معاملات السفارة السعودية في الاردن</h1>
-        <p>بوابتكم الموثوقة والمجربة لإنجاز كافة التأشيرات والخدمات الرسمية للمملكة العربية السعودية بكل سرعة وسهولة ودقة تامة.</p>
-        <a href="https://wa.me/962785073000" class="btn">💬 ابدأ طلبك الآن عبر الواتساب</a>
-    </section>
+    <!-- 2. قائمة المنيو -->
+    <nav class="main-menu">
+        <div class="logo-area">
+            <!-- هنا يمكنك وضع الشعار المصغر من image_0.png -->
+            <img src="path/to/image_0.png" alt="شعار السعودية والأردن" style="height: 40px; border-radius:4px;"> 
+            <span style="margin-right: 10px; font-weight: bold;">فيزا السعودية</span>
+        </div>
+        <div class="menu-links">
+            <a href="#">الرئيسية</a>
+            <a href="#">خدماتنا</a>
+            <a href="#">السفارة السعودية</a>
+            <a href="#">تواصل معنا</a>
+            <a href="#">طلب تأشيرة</a>
+        </div>
+    </nav>
 
-    <div class="container">
-        
-        <section id="about" style="margin-bottom: 50px;">
-            <h2 class="section-title">من نحن</h2>
-            <div class="card" style="border-top-color: var(--primary-color);">
-                <p>نحن مكتب معتمد ومرخص في الأردن، متخصص في تقديم خدمات الاستشارة ومتابعة وإنجاز معاملات السفارة السعودية والتأشيرات بكافة أنواعها. رسالتنا هي تسهيل الإجراءات الرسمية لعملائنا الكرام من خلال الالتزام التام بالشفافية، السرعة، والدقة العالية في إنجاز المعاملات حتى اكتمالها.</p>
+    <!-- 3. القسم الرئيسي "من نحن" -->
+    <main>
+        <section class="about-section">
+            <div class="about-text">
+                <h2>من نحن</h2>
+                <p>
+                    نحن مكتب متخصص في متابعة وإنجاز إجراءات تأشيرات العمل السعودية في الأردن، ونقدم خدمات الاستشارة، تجهيز الملفات، ومتابعة الطلبات حتى اكتمال الإجراءات، مع الالتزام بالشفافية والسرعة والدقة.
+                </p>
+            </div>
+            <div class="about-image">
+                <!-- ضع رابط الصورة image_1.png هنا -->
+                <img src="path/to/image_1.png" alt="صورة الجوازات الأردنية">
             </div>
         </section>
+    </main>
 
-        <section id="services" style="margin-bottom: 50px;">
-            <h2 class="section-title">الخدمات والتأشيرات</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>تأشيرات العمل السعودية</h3>
-                    <p>متابعة وإنجاز إجراءات تأشيرات العمل بالكامل من الأردن مع تقديم خدمات الاستشارة المهنية والمتطلبات اللازمة.</p>
-                </div>
-                <div class="card">
-                    <h3>الخدمات المتممة</h3>
-                    <p>تصديق الشهادات والأوراق الرسمية المطلوبة ومتابعة الطلبات خطوة بخطوة حتى اكتمال كافة الإجراءات الرسمية.</p>
-                </div>
-                <div class="card">
-                    <h3>التأشيرات والزيارات الأخرى</h3>
-                    <p>تشمل التأشيرة السياحية، تأشيرات الزيارة (العائلية والشخصية)، وتأشيرات رجال الأعمال.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="grid" style="margin-bottom: 50px;">
-            <section id="tajeel">
-                <h2 class="section-title" style="font-size: 1.5rem;">حجز مواعيد تسهيل</h2>
-                <div class="card">
-                    <p>نقدم خدمة مساعدة العملاء في ترتيب وحجز المواعيد الرسمية الخاصة بمركز "تسهيل" المعتمد لإنجاز معاملات التأشيرات والخدمات القنصلية بكل سهولة.</p>
-                </div>
-            </section>
-
-            <section id="accreditation">
-                <h2 class="section-title" style="font-size: 1.5rem;">الاعتماد المهني</h2>
-                <div class="card">
-                    <p>تقديم الاستشارات والإجراءات الخاصة باعتماد الشهادات المهنية، توثيق المؤهلات، ومتابعة متطلبات الاعتماد للسفر والعمل في السعودية.</p>
-                </div>
-            </section>
-        </div>
-
-    </div>
-
-    <footer id="contact">
-        <div class="footer-content">
+    <!-- 4. قسم معلومات الاتصال (التذييل) -->
+    <footer class="footer-section">
+        <div class="contact-info">
+            <h3>معلومات الاتصال</h3>
             <div>
-                <h4>معلومات الاتصال</h4>
-                <p>📞 هاتف / واتساب: 0785073000</p>
-                <p>📧 البريد الإلكتروني: Soudevisa@gmail.com</p>
+                <span class="contact-label">رقم الهاتف:</span> 
+                <span dir="ltr">0785073000</span>
             </div>
             <div>
-                <h4>عنوان المكتب</h4>
-                <p>الأردن - عمان - الدوار الأول</p>
+                <span class="contact-label">الإيميل:</span> 
+                <span>saudevisa@gmail.com</span>
             </div>
             <div>
-                <h4>ساعات العمل</h4>
-                <p>من الأحد إلى الخميس</p>
-                <p>من الساعة 9:00 صباحاً حتى 3:00 مساءً</p>
+                <span class="contact-label">الموقع:</span> 
+                <span>الأردن - جبل عمان - دوار الاول</span>
             </div>
         </div>
-        <div class="copy">
-            جميع الحقوق محفوظة © معتمدون لإنجاز معاملات السفارة السعودية في الاردن
+        <div class="contact-image">
+            <!-- ضع رابط الصورة image_3.png هنا -->
+            <img src="path/to/image_3.png" alt="صورة واجهة المكتب" class="embassy-img">
         </div>
     </footer>
 
